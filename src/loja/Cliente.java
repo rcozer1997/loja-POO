@@ -14,6 +14,8 @@ public class Cliente {
 		return "Cliente [cpf=" + cpf + ", nome=" + nome + ", telefone=" + telefone + "]";
 	}
 	
-	
+	public String getCPF() {
+		return this.cpf;
+	}
 	
 }

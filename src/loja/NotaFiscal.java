@@ -3,15 +3,14 @@ import java.util.ArrayList;
 
 public class NotaFiscal {
 	int codigo;
+	Cliente comprador;
 	String data, metodoPagamento;
 	ArrayList<ItemCompra> listaItensCompra = new ArrayList<>();
 	
-	public NotaFiscal(int codigo, String data, String metodoPagamento, ArrayList<ItemCompra> listaItensCompra) {
+	public NotaFiscal(String cpf_comprador, String metodoPagamento) {
 		super();
-		this.codigo = codigo;
-		this.data = data;
+		this.comprador.cpf = cpf_comprador;
 		this.metodoPagamento = metodoPagamento;
-		this.listaItensCompra = listaItensCompra;
 	}
 
 	@Override
@@ -20,5 +19,7 @@ public class NotaFiscal {
 				+ ", listaItensCompra=" + listaItensCompra + "]";
 	}
 	
-	
+	public int getCodigo() {
+		return this.codigo;
+	}
 }

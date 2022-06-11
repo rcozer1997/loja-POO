@@ -29,12 +29,14 @@ public class Loja {
        Scanner s = new Scanner(System.in);
        
        System.out.println("Digite os dados do produto: ");
-       System.out.println("Código: ");
+       System.out.println("Codigo: ");
        int codigo = s.nextInt();
+       s.nextLine();
        System.out.println("Nome: ");
        String nome = s.nextLine();
-       System.out.println("Preço: ");
+       System.out.println("Preco: ");
        double preco = s.nextFloat();
+       s.nextLine();
        System.out.println("Categoria: ");
        String categoria = s.nextLine();
        System.out.println("Desconto: ");
@@ -51,14 +53,12 @@ public class Loja {
 	       Scanner s = new Scanner(System.in);
 	       
 	       System.out.println("Digite os dados da Nota Fiscal: ");
-	       System.out.println("Código: ");
-	       int codigo = s.nextInt();
-	       System.out.println("Data: ");
-	       String data = s.nextLine();
-	       System.out.println("Método de Pagamento: ");
+	       System.out.println("CPF do comprador: ");
+	       String cpf = s.nextLine();
+	       System.out.println("Metodo de Pagamento: ");
 	       String metodo = s.nextLine();
 	       
-	       NotaFiscal n = new NotaFiscal(codigo, data, metodo,); //DUVIDA AQUI, DEVO PASSAR O ARRAY LISTACOMPRA? COMO?
+	       NotaFiscal n = new NotaFiscal(cpf, metodo); 
 	       
 	       listaNotas.add(n);
 	     
@@ -85,4 +85,82 @@ public class Loja {
 	}
 	
 	//Método buscar
+	
+	void buscaCliente(String cpf) {
+		  for(int i = 0; i < listaClientes.size(); i++)
+	       {
+	           Cliente c = listaClientes.get(i);
+
+	           if(c.getCPF().equals(cpf))
+	           {
+	       		  
+	    	       }
+
+	               break;
+	           }
+	       }
+	
+	
+	void removerCliente(String cpf) {
+			Scanner s = new Scanner(System.in);
+			System.out.println("Digite o CPF:");
+			cpf = s.nextLine();
+			for(int i = 0; i < listaClientes.size(); i++)
+	       {
+	           Cliente c = listaClientes.get(i);
+
+	           if(c.getCPF().equals(cpf))
+	           {
+	               
+	               listaClientes.remove(c);
+	               System.out.println("Cliente removido!");
+
+	               break;
+	           }
+	       }
+
+	}
+	
+	void removerProduto() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Digite o código do produto:");
+		int codigo = s.nextInt();
+		for(int i = 0; i < listaProdutos.size(); i++)
+       {
+           Produto p = listaProdutos.get(i);
+
+           if(p.getCodigo() == codigo)
+           {
+               
+               listaProdutos.remove(p);
+               System.out.println("Produto removido!");
+
+               break;
+           }
+       }
+
+}
+	void removerNota() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Digite o código da nota:");
+		int codigo = s.nextInt();
+		for(int i = 0; i < listaNotas.size(); i++)
+       {
+           NotaFiscal n = listaNotas.get(i);
+
+           if(n.getCodigo() == codigo)
+           {
+               
+               listaNotas.remove(n);
+               System.out.println("Nota removida!");
+
+               break;
+           }
+       }
+
+}
+	
+
+
+	
 }

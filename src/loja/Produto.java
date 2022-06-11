@@ -23,5 +23,24 @@ public class Produto {
 				+ ", preço=" + preço + ", desconto=" + desconto + "]";
 	}
 	
+	public int getCodigo() {
+		return this.codigo;
+	}
 	
+	public double custoProduto() {
+		return this.preço-= this.desconto;
+	}
+	
+	void atualizarEstoque(int qtd) {
+		this.estoque += qtd;
+
+	}
+	
+	void atualizarDesconto(double valor) {
+		this.desconto += valor;
+	}
+	
+	void atualizarPreco(double valor) {
+		this.preço+= valor;
+	}
 }
