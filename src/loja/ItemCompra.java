@@ -14,8 +14,15 @@ public class ItemCompra {
 
 	@Override
 	public String toString() {
-		return "ItemCompra [produto=" + produto + ", quantidade=" + quantidade + ", custoUnidade=" + custoUnidade + "]";
+		return "ItemCompra [Produto=" + produto.nome + ", Quantidade=" + quantidade + ", CustoUnidade=" + custoUnidade + "]";
 	}
 	
+	double custoTotal() {
+		return this.custoUnidade * this.quantidade;
+	}
 	
+	Produto getItemCompraProduto() {
+		return this.produto;
+	}
+
 }
